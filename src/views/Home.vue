@@ -40,7 +40,6 @@ watchEffect(() => {
     filteredPokemon.value = pokemonList.value;
   }
 });
-
 const loadMore = () => {
   offset.value += limit.value;
   fetchPokemon();
@@ -107,7 +106,8 @@ body {
   flex-wrap: wrap;
   width: 96vw;
   overflow-x: hidden;
-  margin: 10px;
+  margin: auto;
+  text-align: center;
 }
 .more-button {
   padding: 10px;

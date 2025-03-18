@@ -26,7 +26,9 @@
   const { pokemon } = defineProps({
     pokemon: Object,
   });
-
+  function capitalizeName(name){
+    return name?.charAt(0).toUpperCase() + name?.slice(1);
+  }
 </script>
 
 
@@ -36,7 +38,7 @@
       #{{pokemon.id}}
     </div>
     <img :src="pokemon.sprites.front_default" :alt="pokemon.name">
-    <div class="pokemon-name">{{ pokemon.name }}</div>
+    <div class="pokemon-name">{{ capitalizeName(pokemon.name) }}</div>
     <span class="pokemon-type">
       <span class="pokemon-type-card" v-for="pokemonType in pokemon.types" :key="typeColors.slot" :style="{backgroundColor: typeColors[pokemonType.type.name]}">{{ pokemonType.type.name }}</span>
     </span>
